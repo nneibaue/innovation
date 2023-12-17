@@ -3,7 +3,10 @@ from enum import Enum, auto
 from typing import List
 
 
-class Effect(BaseModel):
+class DefaultModel(BaseModel):
+    model_config = ConfigDict(validate_assignment=True)
+
+class Effect(DefaultModel):
     ...
 
 class Color(Enum):
@@ -22,11 +25,11 @@ class Symbol(Enum):
     CLOCK = auto()
 
 # Icons belong on cards. Not sure if we need a backreference
-class Icon(BaseModel):
+class Icon(DefaultModel):
     position: int
     symbol: Symbol
 
-class Card(BaseModel):
+class Card(DefaultModel):
     name: str
     age: int
     color: Color
@@ -37,27 +40,27 @@ class Card(BaseModel):
 class CardSet(RootModel):
     root: List[Card]
 
-class BoardPile(BaseModel):
+class BoardPile(DefaultModel):
     cards: CardSet
     color: Color
 
-class SupplyPile(BaseModel):
+class SupplyPile(DefaultModel):
     cards: CardSet
     age: int
 
 class Board(RootModel):
     root: List[BoardPile]
 
-class Player(BaseModel):
+class Player(DefaultModel):
     name: str
     board: BoardPile
     score: CardSet
     achievements: CardSet
 
-class SpecialAchievement(BaseModel):
+class SpecialAchievement(DefaultModel):
     ...
 
-class Game(BaseModel):
+class Game(DefaultModel):
     players: List[Player]
     supply: List[SupplyPile]
     available_achievements: CardSet
