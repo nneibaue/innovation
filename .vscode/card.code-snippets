@@ -1,0 +1,28 @@
+{
+"Card Template": {
+  "prefix": "card",
+  "body": [
+    "- name: ${1:CardName}",
+    "  age: ${2:CardAge}",
+    "  color: ${3:CardColor}",
+    "  icons:",
+    "    - symbol: ${4:Symbol1}",
+    "      position: ${5:Position1}",
+    "    - symbol: ${6:Symbol2}",
+    "      position: ${7:Position2}",
+    "    - symbol: ${8:Symbol3}",
+    "      position: ${9:Position3}",
+    "  effects:",
+    "    - symbol: ${10:Symbol1}",
+    "      demand: ${11:False}",
+    "      optional: ${12:False}",
+    "      text: \"${13:EffectText1}\"",
+    "    - symbol: ${14:Symbol2}",
+    "      demand: ${15:False}",
+    "      optional: ${16:False}",
+    "      text: \"${17:EffectText2}\""
+  ],
+  "description": "Generate a YAML representation for a card with multiple icons and effects"
+}
+
+}
