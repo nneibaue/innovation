@@ -1,0 +1,166 @@
+- name: Monotheism
+  age: 2
+  color: purple
+  icons:
+    - symbol: castle
+      position: 1
+    - symbol: castle
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: True
+      optional: False
+      text: "I demand you transfer a top card on your board of a different color from any card on my board to my score pile! If you do, draw and tuck a 1!"
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Draw and tuck a 1"
+- name: Canal Building
+  age: 2
+  color: yellow
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may exchange all the highest cards in your hand with all the highest cards in your score pile"
+- name: Mapmaking
+  age: 2
+  color: green
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a 1 from your score pile, if it has any, to my score pile!"
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If any card was transferred due to the demand, draw and score a 1"
+- name: Calendar
+  age: 2
+  color: blue
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: False
+      text: "If you have more cards in your score pile than in your hand, draw two 3"
+- name: Currency
+  age: 2
+  color: green
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may return any number of cards from you hand. If you do, draw and score a 2 for every different value of card you returned."
+- name: Mathematics
+  age: 2
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a card from your hand. If you do, draw and meld a card of value one higher than the card you returned"
+- name: Fermenting
+  age: 2
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: False
+      text: "Draw a 2 for every color on your board with one or more leaf."
+- name: Road Building
+  age: 2
+  color: red
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: castle
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Meld on or two cards from your hand. If you melded two, you may transfer your top red card to another player's board. If you do, transfer that player's top green card to your board"
+- name: Philosophy
+  age: 2
+  color: purple
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay left any one color of your cards"
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may score a card from your hand"
+- name: Construction
+  age: 2
+  color: red
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: castle
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: True
+      optional: False
+      text: "I demand you transfer two cards from your hand to my hand! Draw a 2!"
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "If you are the only player with five top cards, claim the Empire achievement."
