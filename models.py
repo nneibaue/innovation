@@ -9,11 +9,12 @@ class DefaultModel(BaseModel):
     model_config = ConfigDict(validate_assignment=True)
 
 
-class Effect(DefaultModel):
-    ...
+class DogmaEffect(DefaultModel):
+    symbol: Symbol
+    demand: bool
+    optional: bool
+    text: str
 
-    def enact(self):
-        return "Enacting Effect"
 
 
 # Icons belong on cards. Not sure if we need a backreference
@@ -27,11 +28,15 @@ class Card(DefaultModel):
     age: int
     color: Color
     icons: List[Icon]
-    effects: List[Effect]
+    effects: List[DogmaEffect]
 
     @property
     def achievement_cost(self):
         return self.age * 5
+
+    @property
+    def symbols(self):
+        return [icon.symbol for icon in self.icons]
 
 
 # have methods of accessing cards based on conditions
@@ -43,6 +48,26 @@ class CardSet(RootModel):
 
     def color(self, _color: Color) -> "CardSet":
         return CardSet([c for c in self.root if c.color == _color])
+
+    @property
+    def min_age(self) -> int:
+        return min(self.root, key=lambda c: c.age)
+
+    @property
+    def max_age(self) -> int:
+        return max(self.root, key=lambda c: c.age)
+
+
+    def lowest(self) -> "CardSet":
+        return [
+            c for c in self.root if c.age == self.min_age
+        ]
+
+    def highest(self) -> "CardSet":
+        return [
+            c for c in self.root if c.age == self.min_age
+        ]
+
 
 
 class BoardPile(DefaultModel):
@@ -111,6 +136,17 @@ class Board(RootModel):
     def assert_one_pile_per_color(self):
         colors = [pile.color for pile in self.root]
         assert len(colors) == len(set(colors)), 'Boards can only have one pile per color'
+    
+    @property
+    def splayed(self) -> List[BoardPile]:
+        return [pile for pile in self.root if pile._splay_direction]
+
+
+    @property
+    def splay_counts(self):
+        directions = [p.splay_direction for p in self.splayed]
+        return Counter(directions)
+
 
     @property
     def symbol_counts(self):
@@ -131,11 +167,19 @@ class Board(RootModel):
 
 
 
+'''
+splay, score, transfer, tuck, unsplay, reveal, return, meld
+'''
 class Player(DefaultModel):
     name: str
     board: BoardPile
+    hand: CardSet
     score: CardSet
     achievements: CardSet
+
+
+
+
 
 
 class SpecialAchievement(DefaultModel):
@@ -147,3 +191,5 @@ class Game(DefaultModel):
     supply: List[SupplyPile]
     available_achievements: CardSet
     special_achievements: List[SpecialAchievement]
+
+    _current_player: Player = PrivateAttr()

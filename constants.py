@@ -19,3 +19,4 @@ class SplayDirection(Enum):
     LEFT = auto()
     RIGHT = auto()
     UP = auto()
+
