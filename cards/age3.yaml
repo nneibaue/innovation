@@ -1,0 +1,174 @@
+- name: Compass
+  age: 3
+  color: green
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a top non-green card with a leaf from your board to my board, and then you transfer a top card without a leaf from my board to your board!"
+- name: Education
+  age: 3
+  color: purple
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return the highest card from your score pile. If ou do, draw a card of value two higher than the higest card remaining in your score pile"
+- name: Translation
+  age: 3
+  color: blue
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may meld all the cards in your score pile. If you meld one, you must meld them all."
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If each top card on your board has a crown, claim the World achievement"
+- name: Machinery
+  age: 3
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you exchange all the cards in your hand with all the higest cards in my hand!"
+    - symbol: leaf
+      demand: False
+      optional: False
+      text: "Score a card from your hand with a castle. You may splay your red cards left"
+- name: Feudalism
+  age: 3
+  color: purple
+  icons:
+    - symbol: castle
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: True
+      optional: False
+      text: "I demand you transfer a card with a castle from your hand to my hand! If you do, unsplay that color of your cards!"
+    - symbol: castle
+      demand: False
+      optional: True
+      text: "You may splay your yellow or purple cards left"
+- name: Engineering
+  age: 3
+  color: red
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: lightbulb
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: True
+      optional: False
+      text: "I demand you transfer all top cards with a castle from your board to my score pile!"
+    - symbol: castle
+      demand: False
+      optional: True
+      text: "You may splay your red cards left"
+- name: Optics
+  age: 3
+  color: red
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+  effects:
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "Draw and meld a 3. If it has a crown, draw and score a 4. Otherwise, transfer a card from your score pile to the score pile of an opponent with fewer points than you."
+- name: Paper
+  age: 3
+  color: green
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay your green or blue cards left."
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw a 4 for every color you have splayed left."
+- name: Medicine
+  age: 3
+  color: yellow
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you exchange the highest card in your score pile with the lowest card in my score pile!"
+- name: Alchemy
+  age: 3
+  color: blue
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: castle
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Draw and reveal a 4 for every three castles on your board. If any of the drawn cards are red, return the cards drawn and all cards in your hand. Otherwise, keep them."
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Meld a card from your hand, then score a card from you hand."
