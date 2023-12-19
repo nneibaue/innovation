@@ -1,0 +1,178 @@
+- name: A.I.
+  age: 10
+  color: purple
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw and score a 10"
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "If Robotics and Software are top cards on any board, the single player with the lowest score wins."
+- name: Self Service
+  age: 10
+  color: green
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "Execute each of the non-demand dogma effects of any other top card on your board. Do not share them."
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If you have more achievements than each opponent, you win"
+- name: Software
+  age: 10
+  color: blue
+  icons:
+    - symbol: clock
+      position: 0
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Draw and score a 10"
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Draw and meld two 10, then execute each of the second card's non-demand dogma effects. Do not share them."
+- name: Globalization
+  age: 10
+  color: yellow
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you return a top card with a leaf on your board!"
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and score a 6. If no player has more leaf than factory on their board, the single player with the most points wins."
+- name: Databases
+  age: 10
+  color: green
+  icons:
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: clock
+      position: 3
+  effects:
+    - symbol: clock
+      demand: True
+      optional: False
+      text: "I demand you return half (rounded up) of the cards in your score pile!"
+- name: Miniatureization
+  age: 10
+  color: red
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a card from your hand. If you returned a 10, draw a 10 for every different value of card in your score pile."
+- name: Stem Cells
+  age: 10
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may score all cards from your hand. If you score one, you must score them all."
+- name: Robotics
+  age: 10
+  color: red
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Score your top green card. Draw and meld a 10, then execute each of its non-demand dogma effects. Do not share them."
+- name: The Internet
+  age: 10
+  color: purple
+  icons:
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: clock
+      demand: False
+      optional: True
+      text: "You may splay your green cards up"
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Draw and score a 10"
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Draw and meld a 10 for every two clock on your board."
+- name: BioEngineering
+  age: 10
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Transfer a top card with a leaf from any opponent's board to your score pile."
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "If any player has fewer than three leaf on their board, the player with the most leaf on their board wins."
