@@ -1,16 +1,22 @@
-from pydantic import BaseModel, ConfigDict, RootModel, PrivateAttr, Field, model_validator
-from typing import List, Optional
+from pydantic import BaseModel, ConfigDict, RootModel, PrivateAttr, Field, model_validator, BeforeValidator, validate_call
+from typing import List, Optional, Annotated, TypeVar
 from collections import Counter
 
 from constants import Color, Symbol, SplayDirection
 
+T = TypeVar('T')
+
+class CardNotFound(ValueError):
+    ...
 
 class DefaultModel(BaseModel):
     model_config = ConfigDict(validate_assignment=True)
 
+Upper = Annotated[T, BeforeValidator(str.upper)]
+Lower = Annotated[T, BeforeValidator(str.lower)]
 
 class DogmaEffect(DefaultModel):
-    symbol: Symbol
+    symbol: Upper[Symbol]
     demand: bool
     optional: bool
     text: str
@@ -20,13 +26,13 @@ class DogmaEffect(DefaultModel):
 # Icons belong on cards. Not sure if we need a backreference
 class Icon(DefaultModel):
     position: int
-    symbol: Symbol
+    symbol: Upper[Symbol]
 
 
 class Card(DefaultModel):
-    name: str
+    name: Lower[str]
     age: int
-    color: Color
+    color: Upper[Color]
     icons: List[Icon]
     effects: List[DogmaEffect]
 
@@ -38,15 +44,32 @@ class Card(DefaultModel):
     def symbols(self):
         return [icon.symbol for icon in self.icons]
 
+    @property
+    def filter_icons(self, positions: int | list[int]) -> List[Icon]:
+        return [icon for icon in self.icons if icon.position in list(positions)]
+
 
 # have methods of accessing cards based on conditions
 class CardSet(RootModel):
     root: List[Card]
 
+    def __getitem__(self, key):
+        return self.root[key]
+
+    def get(self, name: str) -> Card:
+        for card in self.root:
+            if card.name.lower() == name.lower():
+                return card
+        raise CardNotFound(name)
+
+
     def age(self, _age: int) -> "CardSet":
         return CardSet([c for c in self.root if c.age == _age])
 
-    def color(self, _color: Color) -> "CardSet":
+    # validate_call doesn't work with forward refs
+    def color(self, _color: str | Color) -> "CardSet":
+        if isinstance(_color, str):
+            _color = Color[_color.upper()]
         return CardSet([c for c in self.root if c.color == _color])
 
     @property
@@ -70,12 +93,28 @@ class CardSet(RootModel):
 
 
 
-class BoardPile(DefaultModel):
+class BoardPile(CardSet):
     '''Single color. Bottom card is index 0, top is -1'''
-    cards: CardSet = Field(default_factory=lambda: [])
-    color: Color
 
     _splay_direction: Optional[SplayDirection] = PrivateAttr(default=None)
+    _color: Optional[Color] = PrivateAttr(default=None)
+    
+    @model_validator(mode='after')
+    def set_color_and_assert_monochromaticity(self):
+        if l := len(self.root) == 1:
+            self._color = self.top.color
+        elif l > 1:
+            assert len({c.color for c in self.root}) == 1
+
+
+    def meld(self, card: Card) -> None:
+        self.root.append(card)
+
+    def remove(self) -> Card:
+        return self.root.pop(-1)
+
+    def __len__(self):
+        return len(self.root)
 
     @property
     def splayed(self) -> bool:
@@ -87,23 +126,24 @@ class BoardPile(DefaultModel):
 
     @property
     def top(self) -> Card:
-        return self.cards[-1]
+        return self.root[-1]
 
     @property
     def visible_icons(self):
+        icons = self.top.icons.copy()
         match self._splay_direction:
-            case None:
-                positions = [1, 2, 3]
             case SplayDirection.LEFT:
                 positions = [3]
             case SplayDirection.RIGHT:
                 positions = [0, 1]
             case SplayDirection.UP:
                 positions = [1, 2, 3]
-        cards = self.cards if self._splay_direction else [self.top]
-        return [
-            icon for card in cards for icon in card.icons if icon.position in positions
-        ]
+
+        if self._splay_direction:
+            for card in self.root[:1]:
+                icons += card.filter_icons(positions)
+
+        return icons
 
     @property
     def visible_symbols(self):
