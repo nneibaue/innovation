@@ -1,0 +1,159 @@
+- name: The Pirate Code
+  age: 5
+  color: red
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: crown
+      position: 2
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer two cards of value 4 or less from your score pile to my score pile!"
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If any cards were transferred due to the demand, score the lowest top card with a crown from your board."
+- name: Societies
+  age: 5
+  color: purple
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: lightbulb
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a card with a lightbulb higher than my top card of the same colorfrom your board to my board! If you do, draw a 5!"
+- name: Measurement
+  age: 5
+  color: green
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may reveal and return a card from your hand. If you do, splay that color of your cards right, and draw a card of value equal to the number of cards of that color on your board."
+- name: Physics
+  age: 5
+  color: blue
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw three 6 and reveal them. If two or more of the drawn cards are the same color, return the drawn cards and all cards in your hand. Otherwise, keep them"
+- name: Astronomy
+  age: 5
+  color: purple
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw and reveal a 6. If the card is green or blue, meld it and repeat this dogma effect."
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "If all non-purple top cards on your board are value 6 or higher, claim the Universe achievement."
+- name: Banking
+  age: 5
+  color: green
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a top non-green card with a factory from your board to my board. If you do, draw and score a 5!"
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may splay your green cards right."
+- name: Coal
+  age: 5
+  color: red
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 2
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and tuck a 5"
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may splay your red cards right."
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may score any one of your top cards. If you do, also score the card beneath it."
+- name: Statistics
+  age: 5
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: leaf
+      position: 2
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you transfer all the highest cards in your score pile to your hand!"
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may splay your yellow cards right."
+- name: Steam Engine
+  age: 5
+  color: yellow
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and tuck two 4, then score your bottom yellow card"
