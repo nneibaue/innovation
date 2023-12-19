@@ -1,0 +1,170 @@
+- name: Enterprise
+  age: 4
+  color: purple
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a top non-purple card with a crown from our board to my board! If you do, draw and meld a 4!"
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may splay your green cards right."
+- name: Anatomy
+  age: 4
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you return a card from your score pile! If you do, return a top card of equal value from your board!"
+- name: Experimentation
+  age: 4
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw and meld a 5"
+- name: Printing Press
+  age: 4
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a card from your score pile. If you do, draw a card of value two higher than the top purple card on your board"
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay your blue cards right"
+- name: Invention
+  age: 4
+  color: green
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay right any one color of your cards currently splayed left. If you do, draw and score a 4"
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "If you have five colors splayed, each in any direction, claim the Wonder achievement."
+- name: Navigation
+  age: 4
+  color: green
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a 2 or 3 from your score pile, if it has any, to my score pile!"
+- name: Colonialism
+  age: 4
+  color: red
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and tuck a 3. If it has a crown, repeat this dogma effect"
+- name: Gunpowder
+  age: 4
+  color: red
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you transfer a top card with a castle from your board to my score pile!"
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "If any card was transferred due to the demand, draw and score a 2."
+- name: Reformation
+  age: 4
+  color: purple
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may tuck a card from your hand for every two leafs on your board."
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may splay your yellow or purple cards right."
+- name: Perspective
+  age: 4
+  color: yellow
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a card from your hand. If you do, score a card from your hand for every two lightbulbs on your board."
