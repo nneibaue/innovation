@@ -198,6 +198,7 @@ class BoardPile(CardSet):
         self._splay_direction = None
 
 
+# TODO: Convert this into a CardSet rootmodel
 class SupplyPile(DefaultModel):
     cards: CardSet
     age: int
@@ -214,9 +215,6 @@ class Board(RootModel):
     def assert_one_pile_per_color(self):
         colors = [pile.color for pile in self.root]
         assert len(colors) == len(set(colors)), 'Boards can only have one pile per color'
-
-    def get(self, color: str | Color) -> BoardPile:
-        ...
 
     
     @property
@@ -260,12 +258,14 @@ class Player(DefaultModel):
     achievements: CardSet
 
 
-    def splay(self, pile: BoardPile):
-        ...
+    def splay(self, color: str | Color, direction: str | SplayDirection):
+        self.board[color].splay(direction)
 
-    def unsplay(self, pile: BoardPile):
-        ...
+    def unsplay(self, color: str | Color):
+        self.board[color].unsplay
 
+    # hmm gotta think about these a bit more. Scoring is a type of transfer.
+    # how do we send things from the client to the server? Should there be a CardTransfer model?
     def score(self, card: Card):
         ...
 
