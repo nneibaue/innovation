@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ConfigDict, RootModel, PrivateAttr, Field, model_validator, BeforeValidator, validate_call
-from typing import List, Optional, Annotated, TypeVar, Set
+from typing import List, Optional, Annotated, TypeVar, Set, Callable, Any
 from collections import Counter
 
 from constants import Color, Symbol, SplayDirection
@@ -101,6 +101,16 @@ class BoardPile(CardSet):
 
     _splay_direction: Optional[SplayDirection] = PrivateAttr(default=None)
     _color: Optional[Color] = PrivateAttr(default=None)
+
+    def _check_color(f: Callable) -> Any:
+        def checker(self, card: Card):
+            if not card.color == self.color:
+                raise ValueError(
+                    f'Can only {f.__name__} cards of the same color!'
+                )
+            return f(self, card)
+        return checker
+    
     
     @model_validator(mode='after')
     def set_color_and_assert_monochromaticity(self):
@@ -109,12 +119,19 @@ class BoardPile(CardSet):
         self._color = self.top.color
         return self
 
-
+    @_check_color
     def meld(self, card: Card) -> 'BoardPile':
         self.root.append(card)
         return self
 
+    @_check_color
+    def tuck(self, card: Card) -> 'BoardPile':
+        self.root.insert(0, card)
+        return self
+
     def remove(self) -> Card:
+        if not self.root:
+            raise ValueError('No cards to remove')
         return self.root.pop(-1)
 
     def __len__(self):
@@ -131,6 +148,14 @@ class BoardPile(CardSet):
     @property
     def top(self) -> Card:
         return self.root[-1]
+
+    @property
+    def bottom(self) -> Card:
+        return self.root[0]
+
+    @property
+    def color(self) -> Color:
+        return self._color
 
     @property
     def visible_icons(self):
@@ -183,6 +208,10 @@ class Board(RootModel):
     def assert_one_pile_per_color(self):
         colors = [pile.color for pile in self.root]
         assert len(colors) == len(set(colors)), 'Boards can only have one pile per color'
+
+    def get(self, color: str | Color) -> BoardPile:
+        ...
+
     
     @property
     def splayed(self) -> List[BoardPile]:
@@ -225,7 +254,17 @@ class Player(DefaultModel):
     achievements: CardSet
 
 
+    def splay(self, pile: BoardPile):
+        ...
 
+    def unsplay(self, pile: BoardPile):
+        ...
+
+    def score(self, card: Card):
+        ...
+
+    def transfer(self, card: Card):
+        ...
 
 
 

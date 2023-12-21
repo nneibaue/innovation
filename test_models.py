@@ -115,6 +115,23 @@ class TestBoardPile:
         red_pile.meld(cards.get('engineering'))
         assert red_pile.top.name == 'engineering'
 
+        # can't meld other colors
+        with pytest.raises(ValueError):
+            red_pile.meld(
+                cards.get('translation') # blue
+            )
+
+    def test_tuck(self, red_pile):
+        red_pile.tuck(cards.get('engineering'))
+        assert red_pile.bottom.name == 'engineering'
+
+        # can't meld other colors
+        with pytest.raises(ValueError):
+            red_pile.tuck(
+                cards.get('translation') # blue
+            )
+
+
     def test_unsplay(self, red_pile):
         red_pile.splay('left').unsplay()
         assert len(red_pile.visible_icons) == 3
