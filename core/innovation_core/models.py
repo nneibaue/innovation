@@ -2,7 +2,7 @@ from pydantic import BaseModel, ConfigDict, RootModel, PrivateAttr, Field, model
 from typing import List, Optional, Annotated, TypeVar, Set, Callable, Any, Dict
 from collections import Counter
 
-from constants import Color, Symbol, SplayDirection
+from .constants import Color, Symbol, SplayDirection
 
 T = TypeVar('T')
 
@@ -20,7 +20,6 @@ class DogmaEffect(DefaultModel):
     demand: bool
     optional: bool
     text: str
-
 
 
 # Icons belong on cards. Not sure if we need a backreference
@@ -286,3 +285,5 @@ class Game(DefaultModel):
     special_achievements: List[SpecialAchievement]
 
     _current_player: Player = PrivateAttr()
+
+
