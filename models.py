@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ConfigDict, RootModel, PrivateAttr, Field, model_validator, BeforeValidator, validate_call
-from typing import List, Optional, Annotated, TypeVar
+from typing import List, Optional, Annotated, TypeVar, Set
 from collections import Counter
 
 from constants import Color, Symbol, SplayDirection
@@ -44,8 +44,7 @@ class Card(DefaultModel):
     def symbols(self):
         return [icon.symbol for icon in self.icons]
 
-    @property
-    def filter_icons(self, positions: int | list[int]) -> List[Icon]:
+    def filter_icons(self, positions: int | list[int]) -> Set[Icon]:
         return [icon for icon in self.icons if icon.position in list(positions)]
 
 
@@ -62,6 +61,9 @@ class CardSet(RootModel):
                 return card
         raise CardNotFound(name)
 
+    @property
+    def names(self) -> Set[str]:
+        return {c.name for c in self.root}
 
     def age(self, _age: int) -> "CardSet":
         return CardSet([c for c in self.root if c.age == _age])
@@ -74,22 +76,23 @@ class CardSet(RootModel):
 
     @property
     def min_age(self) -> int:
-        return min(self.root, key=lambda c: c.age)
+        return min(self.root, key=lambda c: c.age).age
 
     @property
     def max_age(self) -> int:
-        return max(self.root, key=lambda c: c.age)
+        return max(self.root, key=lambda c: c.age).age
 
-
+    @property
     def lowest(self) -> "CardSet":
-        return [
+        return CardSet([
             c for c in self.root if c.age == self.min_age
-        ]
+        ])
 
+    @property
     def highest(self) -> "CardSet":
-        return [
-            c for c in self.root if c.age == self.min_age
-        ]
+        return CardSet([
+            c for c in self.root if c.age == self.max_age
+        ])
 
 
 
