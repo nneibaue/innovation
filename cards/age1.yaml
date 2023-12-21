@@ -241,18 +241,3 @@
       demand: False
       optional: False
       text: "If no cards were transferred due to this demand, draw a 1"
-- name: Metalworking
-  age: 1
-  color: red
-  icons:
-    - symbol: castle
-      position: 0
-    - symbol: castle
-      position: 1
-    - symbol: castle
-      position: 3
-  effects:
-    - symbol: castle
-      demand: False
-      optional: False
-      text: "Draw and reveal a 1. If it has a castle, score it and repeat this dogma effect. Otherwise, keep it"
