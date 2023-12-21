@@ -104,14 +104,15 @@ class BoardPile(CardSet):
     
     @model_validator(mode='after')
     def set_color_and_assert_monochromaticity(self):
-        if l := len(self.root) == 1:
-            self._color = self.top.color
-        elif l > 1:
-            assert len({c.color for c in self.root}) == 1
+        if len(self.root) >= 1:
+            assert len({c.color for c in self.root}) == 1, 'BoardPiles must be a single color!'
+        self._color = self.top.color
+        return self
 
 
-    def meld(self, card: Card) -> None:
+    def meld(self, card: Card) -> 'BoardPile':
         self.root.append(card)
+        return self
 
     def remove(self) -> Card:
         return self.root.pop(-1)
@@ -143,7 +144,7 @@ class BoardPile(CardSet):
                 positions = [1, 2, 3]
 
         if self._splay_direction:
-            for card in self.root[:1]:
+            for card in self.root[:-1]:
                 icons += card.filter_icons(positions)
 
         return icons
@@ -156,8 +157,11 @@ class BoardPile(CardSet):
     def symbol_counts(self) -> int:
         return Counter(self.visible_symbols)
 
-    def splay(self, direction: SplayDirection) -> None:
+    def splay(self, direction: str | SplayDirection) -> 'BoardPile':
+        if isinstance(direction, str):
+            direction = SplayDirection[direction.upper()]
         self._splay_direction = direction
+        return self
 
     def unsplay(self) -> None:
         self._splay_direction = None
