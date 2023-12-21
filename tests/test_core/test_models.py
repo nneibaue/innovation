@@ -1,8 +1,16 @@
 import pytest
 from pydantic import ValidationError
 
-from cards import Cards
-from models import Symbol, CardSet, Color, BoardPile, SplayDirection
+from innovation_core import (
+    Cards,
+    Symbol,
+    CardSet,
+    BoardPile,
+    Color
+)
+# from innovation_core import Cards
+# from src.cards import Cards
+# from lib.models import Symbol, CardSet, Color, BoardPile, SplayDirection
 
 
 class TestCard:

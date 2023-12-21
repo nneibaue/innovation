@@ -1,0 +1,38 @@
+[project]
+name = "innovation-core"
+version = "0.0.1"
+description = "Core engine and data for the innovation board game"
+# readme = "README.md" # Optional
+requires-python = ">=3.12"
+authors = [
+  {name="Nate Neibauer", email="nneibauer044@gmail.com" }
+]
+maintainers = [
+  {name="Nate Neibauer", email="nneibauer044@gmail.com" }
+]
+
+
+dependencies = [
+    "pydantic >= 2.5.2",
+    "pyyaml",
+    "fire"
+]
+
+[project.optional-dependencies]
+dev = ["build"]
+test = ["pytest"]
+
+[project.urls]  
+"Homepage" = "https://github.com/nneibaue/innovation"
+
+# [project.scripts]  # Optional
+# sample = "sample:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[build-system]
+# These are the assumed default build requirements from pip:
+# https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
+requires = ["setuptools>=65.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
