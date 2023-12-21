@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ConfigDict, RootModel, PrivateAttr, Field, model_validator, BeforeValidator, validate_call
-from typing import List, Optional, Annotated, TypeVar, Set, Callable, Any
+from typing import List, Optional, Annotated, TypeVar, Set, Callable, Any, Dict
 from collections import Counter
 
 from constants import Color, Symbol, SplayDirection
@@ -51,15 +51,22 @@ class Card(DefaultModel):
 # have methods of accessing cards based on conditions
 class CardSet(RootModel):
     root: List[Card]
+    _index: Dict[str, Card] = PrivateAttr(default_factory=lambda: {})
+
+    def __init__(self, cards: List[Card]):
+        super().__init__(cards)
+        # build index
+        for c in self.root:
+            self._index[c.name.lower()] = c
 
     def __getitem__(self, key):
         return self.root[key]
 
     def get(self, name: str) -> Card:
-        for card in self.root:
-            if card.name.lower() == name.lower():
-                return card
-        raise CardNotFound(name)
+        try:
+            return self._index[name.lower()]
+        except KeyError:
+            raise CardNotFound(name)
 
     @property
     def names(self) -> Set[str]:

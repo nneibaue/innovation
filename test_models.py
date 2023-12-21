@@ -1,19 +1,18 @@
-import utils
 import pytest
 from pydantic import ValidationError
 
-cards = utils.load_cards("cards")
+from cards import Cards
 from models import Symbol, CardSet, Color, BoardPile, SplayDirection
 
 
 class TestCard:
     def test_filter_icons(self):
-        card = cards.get("chemistry")
+        card = Cards.CHEMISTRY
         icons = card.filter_icons([0, 2])
         assert [i.symbol for i in icons] == [Symbol.FACTORY, Symbol.FACTORY]
 
     def test_symbols(self):
-        assert cards.get("astronomy").symbols == [
+        assert Cards.ASTRONOMY.symbols == [
             Symbol.CROWN,
             Symbol.LIGHTBULB,
             Symbol.LIGHTBULB,
@@ -25,11 +24,11 @@ class TestCardSet:
     def sample(self):
         return CardSet(
             [
-                cards.get("astronomy"),
-                cards.get("reformation"),
-                cards.get("perspective"),
-                cards.get("medicine"),
-                cards.get("paper"),
+                Cards.ASTRONOMY,
+                Cards.REFORMATION,
+                Cards.PERSPECTIVE,
+                Cards.MEDICINE,
+                Cards.PAPER,
             ]
         )
 
@@ -56,19 +55,19 @@ class TestBoardPile:
     @pytest.fixture
     def red_pile(self):
         return BoardPile(
-            [cards.get("optics"), cards.get("gunpowder"), cards.get("colonialism")]
+            [Cards.OPTICS, Cards.GUNPOWDER, Cards.COLONIALISM]
         )
 
     def test_monochromaticity(self):
         # red cards
-        _ = BoardPile([cards.get("gunpowder"), cards.get("coal")])
+        _ = BoardPile([Cards.GUNPOWDER, Cards.COAL])
 
         # multicolor
         with pytest.raises(ValidationError):
             _ = BoardPile(
                 [
-                    cards.get("medicine"),  # yellow
-                    cards.get("paper"),  # green
+                    Cards.MEDICINE,  # yellow
+                    Cards.PAPER,  # green
                 ]
             )
 
@@ -112,23 +111,23 @@ class TestBoardPile:
 
 
     def test_meld(self, red_pile):
-        red_pile.meld(cards.get('engineering'))
+        red_pile.meld(Cards.ENGINEERING)
         assert red_pile.top.name == 'engineering'
 
         # can't meld other colors
         with pytest.raises(ValueError):
             red_pile.meld(
-                cards.get('translation') # blue
+                Cards.TRANSLATION # blue
             )
 
     def test_tuck(self, red_pile):
-        red_pile.tuck(cards.get('engineering'))
+        red_pile.tuck(Cards.ENGINEERING)
         assert red_pile.bottom.name == 'engineering'
 
         # can't meld other colors
         with pytest.raises(ValueError):
             red_pile.tuck(
-                cards.get('translation') # blue
+                Cards.TRANSLATION # blue
             )
 
 
