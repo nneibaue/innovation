@@ -157,3 +157,22 @@
       demand: False
       optional: False
       text: "Draw and tuck two 4, then score your bottom yellow card"
+- name: Chemistry
+  age: 5
+  color: blue
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: factory
+      position: 2
+  effects:
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may splay your blue cards right"
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and score a card of value one higher than the highest top card on your board and then return a card from your score pile"
