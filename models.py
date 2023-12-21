@@ -248,7 +248,7 @@ splay, score, transfer, tuck, unsplay, reveal, return, meld
 '''
 class Player(DefaultModel):
     name: str
-    board: BoardPile
+    board: Board
     hand: CardSet
     score: CardSet
     achievements: CardSet
