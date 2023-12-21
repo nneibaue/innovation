@@ -15,6 +15,7 @@ class Symbol(Enum):
     FACTORY = 'FACTORY'
     CLOCK = 'CLOCK'
 
+
 class SplayDirection(Enum):
     LEFT = 'LEFT'
     RIGHT = 'RIGHT'
