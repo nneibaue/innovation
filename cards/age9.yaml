@@ -1,0 +1,174 @@
+- name: Fission
+  age: 9
+  color: red
+  icons:
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: clock
+      position: 3
+  effects:
+    - symbol: clock
+      demand: True
+      optional: False
+      text: "I demand you draw a 10! If it is red, remove all hands, boards, and score piles from the game! If this occurs, the dogma action is complete."
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Return a top card other than Fission from any player's board. Draw a 10."
+- name: Composities
+  age: 9
+  color: red
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you transfer all but one card from your hand to my hand! Also transfer the highest card from your score pile to my score pile!"
+- name: Genetis
+  age: 9
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw and meld a 10. Score all cards beneath it."
+- name: Suburbia
+  age: 9
+  color: yellow
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may tuck any number of cards from your hand. Draw and score a 1 for each card you tucked."
+- name: Satellites
+  age: 9
+  color: green
+  icons:
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: clock
+      position: 3
+  effects:
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Return all cards from your hand and draw three 8."
+    - symbol: clock
+      demand: False
+      optional: True
+      text: "You may splay your purple cards up."
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Meld a card from your hand and then execute each of its non-demand dogma effects. Do not share them."
+- name: Services
+  age: 9
+  color: purple
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you transfer all the highest cards from your score pile to my hand! If you transferred any cards, then transfer a top card from my board without a leaf to your hand!"
+- name: Ecology
+  age: 9
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a card from your hand. If you do, score a card from your hand and draw two 10."
+- name: Specialization
+  age: 9
+  color: purple
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Reveal a card from your hand. Take into your hand the top card of that color from all opponents' boards."
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may splay your yellow or blue cards up"
+- name: Computers
+  age: 9
+  color: blue
+  icons:
+    - symbol: clock
+      position: 0
+    - symbol: clock
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: clock
+      demand: False
+      optional: True
+      text: "You may splay your red cards or green cards up."
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Draw and meld a 10, then execute each of its non-demand dogma effects. Do not share them."
+- name: Collaboration
+  age: 9
+  color: green
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you draw two 9 and reveal them! Transfer the card of my choice to my board, and meld the other!"
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If you have ten or more green cards on your board, you win."

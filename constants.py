@@ -1,22 +1,22 @@
 from enum import Enum, auto
 
 class Color(Enum):
-    RED = auto()
-    GREEN = auto()
-    BLUE = auto()
-    YELLOW = auto()
-    PURPLE = auto()
+    RED = 'RED'
+    GREEN = 'GREEN'
+    BLUE = 'BLUE'
+    YELLOW = 'YELLOW'
+    PURPLE = 'PURPLE'
 
 class Symbol(Enum):
-    CASTLE = auto()
-    CROWN = auto()
-    LEAF = auto()
-    LIGHTBULB = auto()
-    FACTORY = auto()
-    CLOCK = auto()
+    CASTLE = 'CASTLE'
+    CROWN = 'CROWN'
+    LEAF = 'LEAF'
+    LIGHTBULB = 'LIGHTBULB'
+    FACTORY = 'FACTORY'
+    CLOCK = 'CLOCK'
 
 class SplayDirection(Enum):
-    LEFT = auto()
-    RIGHT = auto()
-    UP = auto()
+    LEFT = 'LEFT'
+    RIGHT = 'RIGHT'
+    UP = 'UP'
 

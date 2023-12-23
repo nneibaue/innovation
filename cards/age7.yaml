@@ -1,0 +1,166 @@
+- name: Explosives
+  age: 7
+  color: red
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you transfer the three highest cards from your hand to my hand! If you transferred any, and then have no cards in your hand, draw a 7!"
+- name: Combustion
+  age: 7
+  color: red
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: factory
+      position: 2
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer one card from your score pile to my score pile for every four crown on my board!"
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "Return you bottom red card"
+- name: Electricity
+  age: 7
+  color: green
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Return all your top cards without a factory, then draw an 8 for each card you returned"
+- name: Evolution
+  age: 7
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may choose to either draw and score an 8 and then return a card from your score pile, or draw a card of value one higher than the highest card in your score pile."
+- name: Publications
+  age: 7
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may rearrange the order of one color of cards on your board."
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay your yellow or blue cards up."
+- name: Bicycle
+  age: 7
+  color: green
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may exchange all the cards in your hand with all the cards in you score pile. If you exchange one, you must exchange them all."
+- name: Lighting
+  age: 7
+  color: purple
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may tuck up to three cards from your hand. If you do, draw and score a 7 for every different value of card you tucked"
+- name: Railroad
+  age: 7
+  color: purple
+  icons:
+    - symbol: clock
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Return all cards from your hand, then draw three 6."
+    - symbol: clock
+      demand: False
+      optional: True
+      text: "You may splay up any one color of your cards currently splayed right."
+- name: Refrigeration
+  age: 7
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you return half (rounded down) of the cards in your hand!"
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may score a card from your hand"
+- name: Sanitation
+  age: 7
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you exchange the two highest cards in your hand with the lowest card in my hand!"

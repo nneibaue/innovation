@@ -1,0 +1,166 @@
+- name: Skyscrapers
+  age: 8
+  color: yellow
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a top non-yellow card with a clock from your board to my board! If you do, score the card beneath it, and return all other cards from that pile!"
+- name: Mass Media
+  age: 8
+  color: green
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: clock
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a card from your hand. If you do, choose a value, and return all cards of that value from all score piles."
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay your purple cards up"
+- name: Quantum Theory
+  age: 8
+  color: blue
+  icons:
+    - symbol: clock
+      position: 0
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: clock
+      demand: False
+      optional: True
+      text: "You may return up to two cards from your hand. If you return two, draw a 10 and then draw and score a 10."
+- name: Mobility
+  age: 8
+  color: red
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: clock
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you transfer your two highest non-red top cards without a factory from your board to my score pile! If you transferred any cards, draw an 8!"
+- name: Empiricism
+  age: 8
+  color: purple
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Choose two colors, then draw and reveal a 9. If it is either of the colors you chose, meld it and you may splay your cards of that color up."
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "If you have twenty of more lightbulb on your board, you win."
+- name: Flight
+  age: 8
+  color: red
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: clock
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If your red cards are splayed up, you may splay and one color of your cards up."
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may splay your red cards up."
+- name: Corporations
+  age: 8
+  color: green
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you transfer a top non-green card with a factory from your board to my score pile! If you do, draw and meld an 8!"
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and meld an 8."
+- name: Antibiotics
+  age: 8
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may return up to three cards from your hand. For every different value of card that you returned, draw two 8."
+- name: Rocketry
+  age: 8
+  color: blue
+  icons:
+    - symbol: clock
+      position: 0
+    - symbol: clock
+      position: 1
+    - symbol: clock
+      position: 2
+  effects:
+    - symbol: clock
+      demand: False
+      optional: False
+      text: "Return a card in any opponent's score pile for every two clock on your board."
+- name: Socialism
+  age: 8
+  color: purple
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: leaf
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may tuck all cards from your hand. If you tuck one, you must tuck them all. If you tucked at least one purple card, take all the lowest cards in each opponent's hand into your hand."

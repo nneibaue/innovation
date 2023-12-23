@@ -1,0 +1,258 @@
+- name: Metalworking
+  age: 1
+  color: RED
+  icons:
+  - symbol: CASTLE
+    position: 0
+  - symbol: CASTLE
+    position: 1
+  - symbol: CASTLE
+    position: 3
+  effects:
+  - symbol: CASTLE
+    demand: False
+    optional: False
+    text: >
+      Draw and reveal a 1. If it has a CASTLE, score it and repeat this dogma effect.
+      Otherwise, keep it.
+- name: Clothing
+  age: 1
+  color: GREEN
+  icons:
+    - symbol: CROWN
+      position: 1
+    - symbol: LEAF
+      position: 2
+    - symbol: LEAF
+      position: 3
+  effects:
+    - symbol: LEAF
+      demand: False
+      optional: False
+      text: "Meld a card from your hand of a different color from any card on your board"
+    - symbol: LEAF
+      demand: False
+      optional: False
+      text: "Draw and core a 1 for each colo present on your board not present on any opponent's board"
+- name: Tools
+  age: 1
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: lightbulb
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return three cards from your hand. If you do, draw and meld a 3"
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return a 3 from your hand. If you do, draw three 1"
+- name: Cirty Stats
+  age: 1
+  color: purple
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: crown
+      demand: True
+      optional: False
+      text: "I demand you transfer a top card with a castle from your board to my board if you have at least four castle on your board! If you do, draw a 1"
+- name: Sailing
+  age: 1
+  color: green
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "Draw and meld a 1"
+- name: The Wheel
+  age: 1
+  color: green
+  icons:
+    - symbol: castle
+      position: 1
+    - symbol: castle
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Draw two 1"
+- name: Writing
+  age: 1
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw a 2"
+- name: Pottery
+  age: 1
+  color: blue
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may return up to three cards from your hand. If you returned any cards, draw and score a card of value equal to the number of cards you returned."
+    - symbol: leaf
+      demand: False
+      optional: False
+      text: "Draw a 1"
+- name: Code of Laws
+  age: 1
+  color: purple
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may tuck a card from your hand of the same color as any card on your board. If you do, you may splay that color of your cards left."
+- name: Archery
+  age: 1
+  color: red
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: True
+      optional: False
+      text: "I demand you draw a 1, then transfer the highest card in your hand to my hand!"
+- name: Mysticism
+  age: 1
+  color: purple
+  icons:
+    - symbol: castle
+      position: 1
+    - symbol: castle
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Draw and reveal a 1. If it is the same color as any card on your board, meld it and draw a 1"
+- name: Agriculture
+  age: 1
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: leaf
+      position: 3
+  effects:
+    - symbol: leaf
+      demand: False
+      optional: True
+      text: "You may return a card from your hand. If you do, draw and score a card of value one higher than the card you returned"
+- name: Masonry
+  age: 1
+  color: yellow
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: castle
+      position: 2
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: True
+      text: "You may meld any number of cards from your hand, each with a castle. If you melded four or more cards in this way, claim the Monument achievement."
+- name: Domestication
+  age: 1
+  color: yellow
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Meld the lowest card in your hand. Draw a 1"
+- name: Oars
+  age: 1
+  color: red
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: crown
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: True
+      optional: False
+      text: "I demand you transfer a card with a crown from your hand to my score pile! If you do, draw a 1, and repeat this dogma effect!"
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "If no cards were transferred due to this demand, draw a 1"
+- name: Metalworking
+  age: 1
+  color: red
+  icons:
+    - symbol: castle
+      position: 0
+    - symbol: castle
+      position: 1
+    - symbol: castle
+      position: 3
+  effects:
+    - symbol: castle
+      demand: False
+      optional: False
+      text: "Draw and reveal a 1. If it has a castle, score it and repeat this dogma effect. Otherwise, keep it"

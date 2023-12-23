@@ -1,0 +1,174 @@
+- name: Encyclopedia
+  age: 6
+  color: blue
+  icons:
+    - symbol: crown
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may meld all the highest cards in your score pile. If you meld one of the highest, you must meld all of the highest."
+- name: Atomic Theory
+  age: 6
+  color: blue
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may splay your blue cards right"
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Draw and meld a 7"
+- name: Metric System
+  age: 6
+  color: green
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: crown
+      position: 2
+    - symbol: crown
+      position: 3
+  effects:
+    - symbol: crown
+      demand: False
+      optional: False
+      text: "If your green cards are splayed right, you may splay any one color of your cards right"
+    - symbol: crown
+      demand: False
+      optional: True
+      text: "You may splay you green cards right."
+- name: Machine Tools
+  age: 6
+  color: red
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and score a card of value equal to the highest card in your score pile."
+- name: Canning
+  age: 6
+  color: yellow
+  icons:
+    - symbol: factory
+      position: 1
+    - symbol: leaf
+      position: 2
+    - symbol: factory
+      position: 3
+  effects:
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may draw and tuck a 6. If you do, score all your top cards without a factory."
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may splay your yellow cards right"
+- name: Democracy
+  age: 6
+  color: purple
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: True
+      text: "You may return any number of cards from your hand. If you have returned more cardsthan any opponent due to Democracy so far during this dogma action, draw and score an 8."
+- name: Vaccination
+  age: 6
+  color: yellow
+  icons:
+    - symbol: leaf
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: leaf
+      position: 2
+  effects:
+    - symbol: leaf
+      demand: True
+      optional: False
+      text: "I demand you return all the lowest cards in your score pile! If you returned any, draw and meld a 6!"
+    - symbol: leaf
+      demand: False
+      optional: False
+      text: "If any card was returned as a result of the demand, draw and meld a 7."
+- name: Industrialization
+  age: 6
+  color: red
+  icons:
+    - symbol: crown
+      position: 0
+    - symbol: factory
+      position: 1
+    - symbol: factory
+      position: 2
+  effects:
+    - symbol: factory
+      demand: False
+      optional: False
+      text: "Draw and tuck a 6 for every color on your board with one or more factory."
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may splay your red or purple cards right"
+- name: Classification
+  age: 6
+  color: green
+  icons:
+    - symbol: lightbulb
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: lightbulb
+      position: 2
+  effects:
+    - symbol: lightbulb
+      demand: False
+      optional: False
+      text: "Reveal the color of a card from your hand. Take into your hand all cards of that color from all opponent's hands. Then, meld all cards of that color from your hand."
+- name: Emancipation
+  age: 6
+  color: purple
+  icons:
+    - symbol: factory
+      position: 0
+    - symbol: lightbulb
+      position: 1
+    - symbol: factory
+      position: 2
+  effects:
+    - symbol: factory
+      demand: True
+      optional: False
+      text: "I demand you transfer a card from your hand to my score pile! If you do, draw a 6!"
+    - symbol: factory
+      demand: False
+      optional: True
+      text: "You may splay your red or purple cards to the right."
